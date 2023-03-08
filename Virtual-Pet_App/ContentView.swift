@@ -6,21 +6,24 @@
 //
 
 import SwiftUI
-
 struct ContentView: View {
     
-    let pet = VirtualPet(
+    @State var pet = VirtualPet(
         name: "Cole",
-        health: 100,
-        hunger: 65,
-        thirst: 55)
-    let menuOptions = MenuOptions(subOptions: [""], options: ["Feed", "Water"])
+        health: 100.00,
+        hunger: 65.0,
+        thirst: 55.0)
+    let menuOptions = MenuOptions(
+        subOptions: ["🎾", "🦮"],
+        options: ["❤️‍🩹", "🍖", "💧", "🏃🏻‍♀️", "💤"]
+    )
     
-    var mainColor = Color(red: 20/255, green: 28/255, blue: 58/255)
+    let mainColor = Color(red: 20/255, green: 28/255, blue: 58/255)
     let accentColor = Color(red: 48/255, green: 105/255, blue: 240/255)
     
     
     var body: some View {
+    
         ZStack{
             mainColor.ignoresSafeArea()
             VStack{
@@ -31,20 +34,62 @@ struct ContentView: View {
                 Text("How would you like to interact with \(pet.name)?")
                     .font(.largeTitle)
                     .bold()
-                    .multilineTextAlignment(.leading)
+                    .multilineTextAlignment(.center)
+//                Text("| HEALTH\t| HUNGER\t| THIRST\t| ENERGY\t|")
+//                Text("| \(String(format: "%.2f", pet.health))\t| \(String(format: "%.2f", pet.hunger))\t\t| \(String(format: "%.2f", pet.thirst))\t\t| \(String(format: "%.2f", pet.energy))\t\t|")
                 Spacer()
-                Image("dog")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 200)
+                HStack{
+                    VStack(spacing: 13){
+                        HStack(spacing: 20){
+                            VStack(spacing: 10){
+                                Text("♥️")
+                                Text("🍖")
+                                Text("💧")
+                                Text("⚡️")
+                            }
+                            .font(.system(size: UIFont.smallSystemFontSize))
+                            VStack(spacing: 15){
+                                StatusBar(percentage: pet.health)
+                                StatusBar(percentage: pet.hunger)
+                                StatusBar(percentage: pet.thirst)
+                                StatusBar(percentage: pet.energy)
+                            }
+                        }
+                    }
+                    
+                    
+                    Image("dog")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 200)
+                }
+                
                 Spacer()
+                
                 HStack{
                     ForEach(0..<menuOptions.options.count) {
                         i in
                         Button(action: {
                             print("Tapped on option with the text: \(menuOptions.options[i])")
+                            
+                            if menuOptions.options[i] == "🍖" {
+                                pet.feed()
+                            } else if menuOptions.options[i] == "💧" {
+                                pet.water()
+                            } else if menuOptions.options[i] == "🏃🏻‍♀️" {
+                                pet.play(activity: 1)
+                            } else if menuOptions.options[i] == "❤️‍🩹" {
+                                pet.heal()
+                            } else if menuOptions.options[i] == "💤" {
+                                pet.sleep()
+                            }
+                            pet.tick()
+                            
+                            print("| HEALTH\t| HUNGER\t| THIRST\t| ENERGY\t|")
+                            print("| \(pet.health)\t\t| \(pet.hunger)\t\t| \(pet.thirst)\t\t| \(pet.energy)\t\n")
                         }, label: {
                             ChoiceViewText(choiceText: menuOptions.options[i])
+                                
                         })
                     }
                 }

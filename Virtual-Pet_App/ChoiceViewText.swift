@@ -13,7 +13,8 @@ struct ChoiceViewText: View {
     
     var body: some View {
         Text(choiceText)
-          .font(.body)
+//          .font(.body)
+          .font(.largeTitle)
           .bold()
           .multilineTextAlignment(.center)
           .padding()

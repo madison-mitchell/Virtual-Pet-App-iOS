@@ -14,6 +14,7 @@
 		6F77C6BA29B787950037DDAC /* VirtualPet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F77C6B929B787950037DDAC /* VirtualPet.swift */; };
 		6F77C6BE29B788D80037DDAC /* ChoiceViewText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F77C6BD29B788D80037DDAC /* ChoiceViewText.swift */; };
 		6F77C6C029B7891C0037DDAC /* MenuOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F77C6BF29B7891C0037DDAC /* MenuOptions.swift */; };
+		6F9CC6FD29B7AF2700CC9AF6 /* StatusBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9CC6FC29B7AF2700CC9AF6 /* StatusBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		6F77C6B929B787950037DDAC /* VirtualPet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualPet.swift; sourceTree = "<group>"; };
 		6F77C6BD29B788D80037DDAC /* ChoiceViewText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiceViewText.swift; sourceTree = "<group>"; };
 		6F77C6BF29B7891C0037DDAC /* MenuOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuOptions.swift; sourceTree = "<group>"; };
+		6F9CC6FC29B7AF2700CC9AF6 /* StatusBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 				6F77C6B929B787950037DDAC /* VirtualPet.swift */,
 				6F77C6BD29B788D80037DDAC /* ChoiceViewText.swift */,
 				6F77C6BF29B7891C0037DDAC /* MenuOptions.swift */,
+				6F9CC6FC29B7AF2700CC9AF6 /* StatusBar.swift */,
 			);
 			path = "Virtual-Pet_App";
 			sourceTree = "<group>";
@@ -149,6 +152,7 @@
 				6F77C6AE29B787750037DDAC /* ContentView.swift in Sources */,
 				6F77C6BA29B787950037DDAC /* VirtualPet.swift in Sources */,
 				6F77C6C029B7891C0037DDAC /* MenuOptions.swift in Sources */,
+				6F9CC6FD29B7AF2700CC9AF6 /* StatusBar.swift in Sources */,
 				6F77C6BE29B788D80037DDAC /* ChoiceViewText.swift in Sources */,
 				6F77C6AC29B787750037DDAC /* Virtual_Pet_App.swift in Sources */,
 			);
